@@ -1,0 +1,25 @@
+<h1>Doctors</h1>
+
+<p>Add a new doctor and specialty:</p>
+
+<form action="/doctors" method="post">
+  <label for="doctor">Write the Doctor's name:</label>
+  <input id="doctor" name="doctor" type="text">
+
+  <label for="specialty">Write the Doctor's specialty:</label>
+  <input id="specialty" name="specialty" type="text">
+
+  <button type="submit">Add Doctor</button>
+</form>
+
+<% if @doctors.any?() %>
+<p>Click on a Doctor to see or add patients:</p>
+
+<ul>
+  <% @doctors.each() do |doctor| %>
+  <li><a href="/doctors/<%= doctor.id() %>"><%= doctor.name() %>, <%= doctor.specialty() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no doctors yet!</p>
+<% end %>

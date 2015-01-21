@@ -16,7 +16,7 @@ class Patient
       birthday = patient.fetch("birthday")
       doctor_id = patient.fetch("doctor_id")
       id = patient.fetch("id").to_i()
-      patients.push(Patient.new({:name => name, :birthday => birthday, :doctor_id => doctor_id, :id => id}))
+      patients.push(Patient.new({:name => name, :birthday => birthday, :doctor_id => doctor_id, :id => nil}))
     end
     patients
   end
